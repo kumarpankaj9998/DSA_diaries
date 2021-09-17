@@ -1,0 +1,62 @@
+class Solution{
+    public:
+    // arr : given array
+    // l : starting index of the array i.e 0
+    // r : ending index of the array i.e size-1
+    // k : find kth smallest element and return using this function
+    int kthSmallest(int arr[], int l, int r, int k) {
+         int part;
+    part=partion_random(int arr[],int l , int r);
+    if(part-1==k-1)//indexing  of array is n-1
+    {return arr[part];}
+    if(part-1>k-1){
+       return kthSmallest(int arr[],int l,int part-1,int k);
+    }
+    if(part-1<k-1){
+       return kthSmallest(int arr[],int part+1,int r,int k-part+l-1);
+        }
+        return INT_MAX;
+    }
+    
+    
+      
+};
+void swap(&a,&b)
+{ int temp=a;
+a=b;
+b=temp;
+    
+}
+int partion_random(int arr[],int l,int r)
+{
+    int i=l;int j=r;
+    int pivot= (rand() % (r – l + 1)) + l;
+    swap(arr[pivot],arr[l]);
+  while(i<j)
+  {
+    do{
+        i++;
+    
+    }(while pivot<=arr[i]);
+    do{
+        j--
+    }while(pivot>arr[j]);
+    if(i>j)
+    {
+        swap(arr[j],arr[pivot]);
+    }
+   
+        swap(arr[i],arr[j]);
+}
+    return j;
+}
+void quicksort(int arr[],int l , int r)
+{
+   
+    if(part==)
+    quicksort(int arr[],int l,partion_random);
+    quicksort(int arr[],int partion_random+1,r);
+    
+    
+   
+}
