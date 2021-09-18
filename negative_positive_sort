@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void shuffle_array(int *,int ,int );
+
+
+void shuffle_array(int arr[],int l,int h)
+{
+    int  pivot=l;
+    int i=l,j=h;
+  
+    while(i<=j)
+    {
+    if(arr[i]<0&&arr[j]<0)//if both negative
+       {   i++;} //then only left pointer will be incremented
+         
+    else if(arr[i]>0&&arr[j]<=0)//if they left is negative and right is positive
+        {
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+            
+        }
+    else if(arr[i]>0&&arr[j]>0)//both are positive
+        {
+            j--;//only right pointer will be decremented
+        }
+    else
+        {
+            i++;
+            j--;
+        }
+      }
+    }
+void printArray(int arr[], int n)
+{
+    for (int i = 0; i <= n; i++)
+        printf("%d ", arr[i]);
+}
+int main() {
+    int arr[40];
+	int i;
+	int n;
+	std::cout << "input no. of element" << std::endl;
+	std::cin >> n;
+	std::cout << "enter element:" << std::endl;
+	for (int i=0;i<n;i++)
+	{ 
+	    cin>>arr[i];
+	}
+	
+	shuffle_array(arr,0,n-1);
+	printArray(arr , n-1);
+	
+	
+	
+	
+	
+	return 0;
+}
