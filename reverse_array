@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include<iostream>
+using namespace std;
+
+
+ void swap(int &a,int &b)  //function for swapping
+ {
+    int temp=a;
+    a=b;
+    b=temp;
+    
+ }
+int main()
+{
+int a[20];
+int len;
+int l;
+std::cout << "enter length" << std::endl;
+cin>>len;
+l=len-1;//l variable
+std::cout << "enter array:" << std::endl;
+for(int i=0;i<len;i++)//input array
+{
+cin>>a[i];
+
+}
+
+
+for( int i=0;i<len-1;i++)
+{
+    if(len%2==0&&i+1==l)//condtion for even and mid
+    {i-1;
+        swap(a[i],a[l]);
+        break;
+    }
+   else
+    {
+        swap(a[i],a[l]);
+        if(i==l)
+        {
+            break;
+        }
+        l--;
+    }
+    std::cout << "new array:" << std::endl;
+    for(int i=0;i<len;i++)
+    {
+     std::cout <<    a[i] << std::endl;
+    }
+}
+
+
+
+
+
+
+
+    return 0;
+}
