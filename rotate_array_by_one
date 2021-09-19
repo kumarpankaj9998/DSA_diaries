@@ -1,0 +1,13 @@
+
+void rotate(int arr[], int n)
+{
+    int i=1;int j=0;
+    int temp;
+    for(i;i<n;i++)
+    {
+        temp=arr[j];
+        arr[j]=arr[i];
+        arr[i]=temp;
+        
+    }
+}
