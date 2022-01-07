@@ -1,0 +1,22 @@
+
+    vector<vector<int>> merge(vector<vector<int>>& intervals) 
+    {
+           vector<vector<int>> MergedInterval;
+           sort(intervals.begin(),intervals.end());
+            vector <int>tempInterval=intervals[0];//from comparision
+           
+        for(auto itr:intervals)
+        {
+            if(itr[0]<=tempInterval[1])/*obviously when comparing variables 2nd part be less then 1st part of iterator then only it comes under a same interval*/
+                 tempInterval[1]=max(itr[1],tempInterval[1]);
+            else
+            {MergedInterval.push_back(tempInterval);
+             tempInterval=itr;// reassgining the temp
+            }
+            
+        }
+        MergedInterval.push_back(tempInterval);
+        return MergedInterval;
+        
+        
+    }
