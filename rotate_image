@@ -1,0 +1,33 @@
+class Solution {
+public:
+    // void swap(vector<vector<int>>& matrix,int i,int j)
+    // {
+    //     auto temp=matrix[i];
+    //     matrix[i]=matrix[j];
+    //     matrix[j]=temp;
+    // }
+    // void reverse(vector<vector<int>>& matrix,int i,int j)
+    // {
+    //     while(i<j)swap(matrix,i++,j++);
+    // }
+    void rotate(vector<vector<int>>& matrix) {
+        int temp;
+        int i,j;
+        for(i=0;i<matrix.size();i++)
+        {
+            for(j=0;j<i;j++)
+            {
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        for(i=0;i<matrix.size();i++)
+        {
+           
+            {
+                reverse(matrix[i].begin(),matrix[i].end());
+            }
+        }
+        
+        
+    }
+};
